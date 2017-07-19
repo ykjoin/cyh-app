@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{page.title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <button ion-item no-lines class="btn" (tap)="gotoUserInfo()">
+        <ion-avatar col-2 float-left>
+            <img [src]="page.upic"/>
+        </ion-avatar>
+    	<div col-10>
+            <h3 [ngClass]="{userlogin:page.userlogin}">{{page.username}}</h3>
+    	    <span class="span1">{{page.ptho}}</span>
+        </div>
+    </button>
+
+    <ion-item-group class="btn">
+        <button ion-item (tap)="gotobalanceInfo()">
+        	<ion-icon name="logo-usd" item-start></ion-icon>
+        	<h4>账户余额</h4>
+            <h4 item-end>99吨</h4>
+        </button>
+        <button ion-item (tap)="gotoCarrInfo()">
+        	<ion-icon name="car" item-start></ion-icon>
+        	<h4>车辆信息</h4>
+        </button>
+        <button ion-item>
+        	<ion-icon name="cart" item-start></ion-icon>
+        	<h4>我的订单</h4>
+        </button>
+        <button ion-item>
+        	<ion-icon name="send" item-start></ion-icon>
+        	<h4>我的发布</h4>
+        </button>
+    </ion-item-group>
+
+    <ion-item-group class="btn">
+        <button ion-item (tap)="gotoRelease()">
+        	<ion-icon name="logo-apple" item-start></ion-icon>
+        	<h4>意见反馈</h4>
+        </button>
+        <button ion-item>
+        	<ion-icon name="logo-apple" item-start></ion-icon>
+        	<h4>关于车友汇</h4>
+        </button>
+        <button ion-item>
+        	<ion-icon name="logo-apple" item-start></ion-icon>
+        	<h4>分享车友汇</h4>
+        </button>
+        <button ion-item>
+        	<ion-icon name="logo-apple" item-start></ion-icon>
+        	<h4>检查更新</h4>
+        </button>
+        <button ion-item (tap)="gotoconfigInfo()">
+        	<ion-icon name="logo-apple" item-start></ion-icon>
+        	<h4>更多设置</h4>
+        </button>
+        <button ion-item (tap)="gotoLogin()">
+        	<ion-icon name="logo-apple" item-start></ion-icon>
+        	<h4>登录</h4>
+        </button>
+    </ion-item-group>
+
+</ion-content>

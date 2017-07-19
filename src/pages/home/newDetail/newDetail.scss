@@ -1,0 +1,43 @@
+page-newDetail {
+    .list-ios {
+        margin: 0;
+        ion-item {
+            border-top: 0px;
+            border-bottom: 0px;
+        }
+        .pink {
+            font-size: 12px;
+            span {
+                color: #ff88bb;
+            }
+        }
+        .tex {
+            float: left;
+            line-height: 35px;
+        }
+        .pink2 {
+            float: right;
+            line-height: 35px;
+        }
+        ion-item-divider {
+            &.item-divider-ios {
+                height: 15px;
+            }
+        }
+    }
+    .box-ion {
+        text-align: center;
+        ion-icon {
+            color: white;
+            background: #969696;
+            margin-right: 14px;
+            border-radius: 100%;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            &.active {
+                background: #ff88bb;
+            }
+        }
+    }
+}

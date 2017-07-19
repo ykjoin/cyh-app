@@ -1,0 +1,13 @@
+page-user-if {
+    ion-content {
+        background: #f2f2f2 !important;
+        ion-item,
+        span {
+            font-size: 12px !important;
+            color: gray !important;
+            ion-label {
+                color: black;
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>首页</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides pager>
+        <ion-slide>
+            <img src="assets/images/ad1.jpg" alt="">
+        </ion-slide>
+        <ion-slide>
+            <img src="assets/images/ad1.jpg" alt="">
+        </ion-slide>
+        <ion-slide>
+            <img src="assets/images/ad1.jpg" alt="">
+        </ion-slide>
+    </ion-slides>
+    <ion-list class="list-ios">
+        <ion-item *ngFor="let its of newsList; let i=index">
+
+            <div (tap)="goto(i)">
+                <ion-row>
+                    <ion-avatar col-2>
+                        <img [src]="its.userpic">
+                    </ion-avatar>
+                    <div col-10>
+                        <h2>{{its.username}}</h2>
+                        <p class="pink">今天:{{its.pubtime}}<span>{{its.cartype}}{{its.color}}</span></p>
+                    </div>
+                </ion-row>
+                <ion-row>
+                    <div>
+                        <p>{{its.yy}}</p>
+                    </div>
+                </ion-row>
+                <ion-row *ngIf="its.photos">
+                    <ion-col *ngFor="let src of its.photos">
+                        <img [src]="src">
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="its.video">
+                    <ion-col *ngFor="let src of its.video">
+                        <img [src]="src">
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div>
+                <div float-left>
+                    <i>{{its.good}}赞</i>
+                    <i margin-left>{{its.say}}评论</i>
+                </div>
+                <div float-right class="box-ion">
+                    <ion-icon name="thumbs-up" (tap)="goodAdd(i)" [ngClass]="{active:!its.isGood}"></ion-icon>
+                    <ion-icon name="text"></ion-icon>
+                    <ion-icon name="share-alt"></ion-icon>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item-divider></ion-item-divider>
+        <!--<ion-item>
+            <ion-row>
+                <ion-avatar col-2>
+                    <img src="assets/images/uPic.png" alt="">
+                </ion-avatar>
+                <div col-10>
+                    <h2>牛逼</h2>
+                    <p class="pink">今天：13:14 <span>奥迪双钻A10</span></p>
+                </div>
+            </ion-row>
+            <ion-row>
+                <div> 
+                    <p>今天真开心</p>
+                </div>
+            </ion-row>
+
+            <ion-slides pager>
+                <ion-slide>
+                    <img src="assets/images/list-01.png" alt="">
+                </ion-slide>
+                <ion-slide>
+                    <img src="assets/images/list-02.png" alt="">
+                </ion-slide>
+                <ion-slide>
+                    <img src="assets/images/list-03.png" alt="">
+                </ion-slide>
+            </ion-slides>
+
+
+            <div>
+                <div float-left>
+                    <i>1000+赞</i>
+                    <i margin-left>1000+评论</i>
+                </div>
+                <div float-right class="box-ion">
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <ion-icon name="text"></ion-icon>
+                    <ion-icon name="share-alt"></ion-icon>
+                </div>
+            </div>
+        </ion-item>-->
+    </ion-list>
+</ion-content>

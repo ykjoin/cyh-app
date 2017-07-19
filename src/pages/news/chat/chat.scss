@@ -1,0 +1,79 @@
+page-chat {
+    ion-content {
+        background: #f2f2f2 !important;
+        height: 100%;
+    }
+    .footer-ios .toolbar-ios:first-child .toolbar-background-ios {
+        border-width: 0;
+    }
+    .mic,
+    .face,
+    .plus {
+        width: 25px;
+        height: 25px;
+        font-size: 22px !important;
+        padding: 5px;
+        margin: 0;
+        line-height: 0;
+        position: absolute;
+        bottom: 8px;
+    }
+    .mic {
+        left: 5px;
+    }
+    .face {
+        right: 35px;
+    }
+    .plus {
+        right: 5px;
+    }
+    .editor {
+        img {
+            width: 25px;
+            height: 25px;
+        }
+        position: relative;
+        left: 40px;
+        padding: 4px 0;
+        overflow: scroll;
+        width: calc(100% - 30px - 80px);
+        background-color: #fff;
+        max-height: 99px;
+        border-radius: 5px;
+    }
+    ion-footer {
+        transform: translateY(220px);
+        bottom: -12px;
+        ion-slides {
+            height: 234px;
+            background: #f2f2f2 !important;
+        }
+    }
+    ion-list {
+        overflow: hidden;
+        ion-item {
+            background: none !important;
+            border: none !important;
+            p {
+                background: white;
+                display: inline-block;
+                padding: 8px;
+                border-radius: 10px;
+                max-width: calc(100% - 50px);
+                height: auto;
+                white-space: normal;
+                overflow: visible;
+            }
+        }
+    }
+    .item-inner {
+        border: none !important;
+    }
+    .send {
+        position: absolute;
+        bottom: 3px;
+        right: 5px;
+        height: 26px;
+        z-index: 9999;
+    }
+}

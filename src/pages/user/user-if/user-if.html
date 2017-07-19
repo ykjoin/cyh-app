@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>个人资料设置</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>
+                <h4>{{yk.portrait}}</h4>
+            </ion-label>
+            <img item-end [src]="its.upic" />
+        </ion-item>
+        <ion-item (tap)="edit(0)">
+            <ion-label>
+                <h4>{{yk.Name}}</h4>
+            </ion-label>
+            <span item-end>{{its.userName}}</span>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <h4>{{yk.Gender}}</h4>
+            </ion-label>
+            <ion-select (ngModel)="yk.nb" cancelText="取消" okText="确定">
+                <ion-option value="0" selecten="true">
+                    男
+                </ion-option>
+                <ion-option value="1">
+                    女
+                </ion-option>
+                <ion-option value="3">
+                    保密
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <h4>{{yk.birth}}</h4>
+            </ion-label>
+            <ion-datetime (ngModel)="yk.bn" displayFormat="YYYY-MM-DD" item-end pickerFormat="YYYY MM DD" cancelText="取消" doneText="确定" minuteValues="0,15,30,45">
+
+            </ion-datetime>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item (tap)="edit(1)">
+
+            <ion-label>
+                <h4>{{yk.Account}}</h4>
+            </ion-label>
+
+            <span item-end>{{its.ptho}}</span>
+        </ion-item>
+        <button ion-item (tap)="edit(2)">
+          <ion-label>
+                <h4>{{yk.password}}</h4>
+            </ion-label>
+            <span item-end>修改</span>
+        </button>
+        <button ion-item>
+          <ion-label>
+                <h4>{{yk.Alipay}}</h4>
+            </ion-label>
+            
+            <span item-end>{{yk.woqu}}</span>
+        </button>
+        <button ion-item (tap)="toto()">
+          <ion-label>
+                <h4>{{yk.WeChat}}</h4>
+            </ion-label>
+            
+            <span item-end>{{yk.woqu}}</span>
+        </button>
+    </ion-list>
+
+</ion-content>

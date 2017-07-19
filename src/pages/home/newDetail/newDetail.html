@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>详情页</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="list-ios">
+        <ion-item>
+            <div>
+                <ion-row>
+                    <ion-avatar col-2>
+                        <img [src]="its.userpic">
+                    </ion-avatar>
+                    <div col-10>
+                        <h2>{{its.username}}</h2>
+                        <p class="pink">今天:{{its.pubtime}}<span>{{its.cartype}}{{its.color}}</span></p>
+                    </div>
+                </ion-row>
+                <ion-row>
+                    <div>
+                        <p>{{its.yy}}</p>
+                    </div>
+                </ion-row>
+                <ion-row *ngIf="its.photos">
+                    <ion-col *ngFor="let src of its.photos">
+                        <img [src]="src">
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="its.video">
+                    <ion-col *ngFor="let src of its.video">
+                        <img [src]="src">
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div>
+                <div float-left>
+                    <i>{{its.good}}赞</i>
+                    <i margin-left>{{its.say}}评论</i>
+                </div>
+                <div float-right class="box-ion">
+                    <ion-icon name="thumbs-up" (tap)="goodAdd()" [ngClass]="{active:!its.isGood}"></ion-icon>
+                    <ion-icon name="text"></ion-icon>
+                    <ion-icon name="share-alt"></ion-icon>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-row>
+                <ion-avatar col-2>
+                    <img [src]="its.userpic">
+                </ion-avatar>
+                <div col-10>
+                    <h2 class="tex">{{its.username}}</h2>
+                    <p class="pink2">{{its.pubtime}}</p>
+                </div>
+            </ion-row>
+            <ion-row>
+                <div>
+                    <p>{{its.yy}}</p>
+                </div>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+</ion-content>

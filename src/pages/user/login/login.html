@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="it.fasd">
+        <div style="text-align: center;padding: 70px 0px;">
+            <img src="assets/images/carFin.png" />
+        </div>
+        <ion-list>
+            <ion-item-group>
+                <ion-item>
+                    <ion-icon name="person" color="pinks" item-start></ion-icon>
+                    <ion-input value="" type="text" name="username" placeholder="手机" [(ngModel)]="page.user.username">
+
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="lock" color="pinks" item-start></ion-icon>
+                    <ion-input value="" type="password" name="password" placeholder="密码" [(ngModel)]="page.user.password">
+
+                    </ion-input>
+                </ion-item>
+            </ion-item-group>
+
+        </ion-list>
+        <ion-list>
+            <button ion-button block color="pinks" (tap)="login()">登录</button>
+        </ion-list>
+        <ion-list>
+            <ion-item no-lines>
+                <div>
+                    忘记密码?
+                </div>
+                <div item-end (tap)="goto()">
+                    会员注册
+                </div>
+            </ion-item>
+
+        </ion-list>
+    </div>
+
+
+    <div *ngIf="it.fase">
+        <ion-list>
+            <ion-item>
+                <ion-label>
+                    手机号
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    验证码
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    密码
+                </ion-label>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <button ion-button block color="pinks">完成注册</button>
+        </ion-list>
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-segment color="light" [(ngModel)]="data.icons">
+            <ion-segment-button value="camera">
+                消息
+            </ion-segment-button>
+            <ion-segment-button value="bookmark">
+                朋友
+            </ion-segment-button>
+        </ion-segment>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content [ngSwitch]="data.icons">
+    <ion-list *ngSwitchCase="'bookmark'">
+        <ion-item *ngFor="let i of data.Friend" (tap)="togo(i)">
+            <ion-avatar item-start>
+                <img [src]="i.upick">
+            </ion-avatar>
+            <div>
+                <p style="color:black;">{{i.uname}}</p>
+            </div>
+        </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'camera'">
+
+        <ion-item *ngFor="let i of data.Friend" (tap)="goto(i)">
+            <ion-avatar item-start>
+                <img [src]="i.upick">
+            </ion-avatar>
+            <div>
+                <p style="color:black;">{{i.uname}}</p>
+                <p style="font-size:12px;color:gray;">{{i.uspeak}}</p>
+            </div>
+
+            <div item-end>
+                <h1 style="font-size:12px;color:gray;">{{i.utime}}</h1>
+                <ion-badge float-right color="pinks">{{i.ufo}}</ion-badge>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

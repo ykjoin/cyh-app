@@ -1,0 +1,33 @@
+page-userbalance {
+    ion-navbar.toolbar {
+        height: 100px;
+        color: #fffaff !important;
+    }
+    .item-ios {
+        padding-left: 0px;
+    }
+    ion-item-group {
+        margin-bottom: 15px;
+    }
+    ion-title span {
+        font-size: 29px;
+    }
+    ion-content {
+        background: #e8e8e8 !important;
+        .div1,
+        .div2 {
+            height: 40px;
+            font-size: 12px;
+        }
+        .div2 {
+            h3,
+            h4 {
+                line-height: 40px;
+            }
+        }
+    }
+    .cler {
+        display: block;
+        clear: both;
+    }
+}

@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{its.uname}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding (tap)="close()" #Content>
+    <ion-list>
+        <div *ngFor="let i of messList">
+            <ion-item #left *ngIf="i.type=='other'">
+                <ion-avatar item-start>
+                    <img [src]="its.upick">
+                </ion-avatar>
+                <p [innerHTML]="i.conten"></p>
+            </ion-item>
+
+            <ion-item no-lines #right *ngIf="i.type=='my'">
+                <ion-avatar item-end>
+                    <img [src]="its.upick">
+                </ion-avatar>
+                <p float-right [innerHTML]="i.conten"></p>
+            </ion-item>
+        </div>
+    </ion-list>
+</ion-content>
+
+<ion-footer #slides>
+    <ion-toolbar color="light">
+        <button ion-button clear class="mic">
+            <ion-icon name="microphone" color="pinks"></ion-icon>
+        </button>
+
+        <div contenteditable="true" class="editor" #editor (input)="inputText()"></div>
+
+        <button ion-button clear class="face" (tap)="openFace()">
+            <ion-icon name="happy-outline" color="pinks"></ion-icon>
+        </button>
+        <button ion-button class="send" [hidden]="itss.tr" small (tap)="sendmsj()">发送</button>
+        <button ion-button clear class="plus">
+             <ion-icon name="add-circle-outline" color="pinks"></ion-icon>
+        </button>
+
+    </ion-toolbar>
+    <ion-slides pager>
+        <ion-slide *ngFor="let i of faces">
+            <ion-grid>
+                <ion-row *ngFor="let k of i">
+                    <ion-col *ngFor="let y of k">
+                        <img [src]="y" (tap)="inputFaces($event)">
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+    </ion-slides>
+</ion-footer>
